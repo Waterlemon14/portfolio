@@ -12,9 +12,8 @@ const projects: Project[] = [
     title: 'MedLink',
     technologies: [
       "Git", 
-      "Svelte", 
-      "SvelteKit", 
-      "Typescript", 
+      "Svelte",  
+      "TypeScript", 
       "PostgreSQL", 
       "PrismaORM", 
       "Supabase", 
@@ -81,8 +80,8 @@ const projects: Project[] = [
       "FastAPI", 
       "DigitalOcean",
       "LoRa Communication",
+      "Sony's Spresense Microcontroller",
       "Sony's Neural Network Console",
-      "Sony's Spresense Microcontroller"
     ],
     description: "DynaMic is a dynamite explosion detection system designed to address blast fishing by providing automated real-time detection and alerts using long range communication and machine learning.",
     subdescriptions: [
@@ -118,8 +117,7 @@ const projects: Project[] = [
     technologies: [
       "Git", 
       "Svelte", 
-      "SvelteKit",
-      "Typescript"
+      "TypeScript"
     ],
     description: "This website",
     subdescriptions: [
