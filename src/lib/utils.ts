@@ -12,12 +12,15 @@ export type WithoutChildren<T> = T extends { children?: any } ? Omit<T, "childre
 export type WithoutChildrenOrChild<T> = WithoutChildren<WithoutChild<T>>;
 export type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & { ref?: U | null };
 
-export const TechMappings: Record<string, string> = { 
+export const TechMappings: Record<string, string> = {
 	"Git"																		: "skill-icons:github-dark",
-  
+
   "Svelte"																: "skill-icons:svelte",
   "React"                                 : "skill-icons:react-dark",
   "FastAPI"																: "skill-icons:fastapi",
+  "Django"                                : "skill-icons:django",
+  "LangChain"                             : "simple-icons:langchain",
+  "Streamlit"                             : "skill-icons:streamlit-dark",
 
   "TailwindCSS"                           : "skill-icons:tailwindcss-dark",
 
@@ -31,21 +34,25 @@ export const TechMappings: Record<string, string> = {
 
   "PostgreSQL"														: "skill-icons:postgresql-dark",
   "MySQL"                                 : "devicon:mysql",
+  "SQLite"                                : "devicon:sqlite",
   "PrismaORM"															: "skill-icons:prisma",
+  "ChromaDB"                              : "simple-icons:chroma",
 
   "Supabase"															: "skill-icons:supabase-dark",
   "DigitalOcean"													: "devicon:digitalocean",
   "Vercel"																: "skill-icons:vercel-dark",
-  
+  "AWS"                                   : "skill-icons:aws-dark",
+  "ESP32"                                 : "simple-icons:espressif",
+
   "Pandas"																: "devicon:pandas",
 	"Google Colab"													: "devicon:googlecolab",
 	"Tensorflow"														: "skill-icons:tensorflow-dark",
 	"PyTorch"																: "skill-icons:pytorch-dark",
-	"Scikit Learn"													: "skill-icons:scikitlearn-dark", 
+	"Scikit Learn"													: "skill-icons:scikitlearn-dark",
 	"Keras"																	: "devicon:keras",
 	"Plotly"																: "devicon:plotly",
   "Seaborn"																: "logos:seaborn-icon",
-  
+
   "LoRa Communication"										: "iconoir:antenna",
   "Sony's Neural Network Console"					: "eos-icons:neural-network",
   "Sony's Spresense Microcontroller"			: "simple-icons:sony",

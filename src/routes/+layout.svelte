@@ -10,12 +10,15 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Eisenhower Aldemita II</title>
 </svelte:head>
 
-<Header />
+<div class="flex min-h-screen flex-col">
+  <Header />
 
-<main class="space-y-8 "> <!-- bg-teal-100 -->		
-    {@render children()}
-</main>
+  <main class="flex-1">
+      {@render children()}
+  </main>
 
-<Footer />
+  <Footer />
+</div>

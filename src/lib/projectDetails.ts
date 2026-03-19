@@ -1,160 +1,225 @@
-interface Project {
-  title: string,
-  technologies: string[],
-  description: string,
-  subdescriptions: string[],
-  images: string[],
-  link: string | null,
+export interface Project {
+  title: string
+  role?: string
+  technologies: string[]
+  description: string
+  subdescriptions: string[]
+  images: string[]
+  link: string | null
+  github?: string | null
 }
 
-const projects: Project[] = [
-  {
-    title: 'MedLink',
-    technologies: [
-      "Git", 
-      "Svelte",  
-      "TypeScript", 
-      "PostgreSQL", 
-      "PrismaORM", 
-      "Supabase", 
-      "Vercel"
-    ],
-    description: "MedLink lets patients quickly search for the medical service they need and see which nearby facilities offer it, complete with real-time availability. (Disclaimer: Site operates on test data for now)",
-    subdescriptions: [
-      "One of the top 10, among 30 start-up pitches during the BIG3.STARTUP.SHOWDOWN at Maya HQ, Mandaluyong",
-      "Implemented Client-Server communication",
-      "Team of 5 over 1 year using Agile Software Development and deployed using Vercel",
-    ],
-    images: [
+export interface Experience {
+  title: string
+  company: string
+  period: string
+  description: string
+  highlights: string[]
+  technologies: string[]
+}
 
+export interface Award {
+  title: string
+  detail: string
+  year: string
+}
+
+export const experiences: Experience[] = [
+  {
+    title: 'AI Intern',
+    company: 'Stratpoint Global Outsourcing Inc.',
+    period: 'Feb 2026 - May 2026',
+    description:
+      'Individual product research, implementation, and deployment of AI products using LLMs and Computer Vision.',
+    highlights: [
+      'Built Identif.ai — a real-time face recognition system with anti-spoofing for access control, featuring occupancy tracking, event logging, dashboard, and an AI chat agent for querying history',
+      'Developed the CV pipeline (PyTorch, ChromaDB), LLM chat agent (LangChain), frontend (Streamlit), and tracking database (SQLite)',
+      'Built Chatty — a chatbot that matches user queries to FAQs and returns corresponding answers or escalates to a live agent',
+      'Dataset refinement, improvement benchmarking (LangChain), and testing using agile software development',
     ],
-    link: "https://cs-192-med-link.vercel.app/",
+    technologies: ['Python', 'FastAPI', 'LangChain', 'Streamlit', 'PyTorch', 'AWS'],
   },
   {
-    title: 'Shogimon',
-    technologies: [
-      "Git", 
-      "Go", 
-      "PureScript", 
-      "Python"
+    title: 'Cybersecurity Intern',
+    company: 'Asia United Bank',
+    period: 'Jun 2025 - Jul 2025',
+    description:
+      'Conducted information security activities and automated security review processes.',
+    highlights: [
+      'Automated firewall review using a Python OCR program, reducing review time by 20 hours per month',
+      'Conducted banking threat reports and audit log reviews with the Information Security Officer',
     ],
-    description: "Shogimon is a board game with an 8x8 board, chess-like piece movements, with shogi like rules, and pokemon sprites.", //" Full game rules in the game page",
-    subdescriptions: [
-      "Implemented the PureScript Client and did behavioral testing for both the PureScript and Python clients",
-      "Extended the game to have server-side state management using Go",
-      "Collaborated in a team of 4 over 1.5 months",
+    technologies: ['Python'],
+  },
+  {
+    title: 'Research Assistant',
+    company: 'AeroComp Project',
+    period: 'Aug 2024 - Jun 2025',
+    description:
+      'Built predictive ML models for materials science research including composite parameter tuning and compressive strength prediction.',
+    highlights: [
+      'Built predictive ML models (Scikit-Learn) for ballistic protection composite optimization and concrete compressive strength prediction',
+      'Data processing using Python, SciPy, NumPy, and Seaborn',
+      'Presented research at IEICES 2025, Kyushu University, Fukuoka, Japan',
     ],
-    images: [
+    technologies: ['Python', 'Scikit Learn', 'Seaborn', 'Pandas'],
+  },
+]
 
+export const projects: Project[] = [
+  {
+    title: 'Human-Machine Identity',
+    role: 'Embedded, DevOps, & Go Server Handler',
+    technologies: ['Go', 'Python', 'Django', 'PostgreSQL', 'Supabase', 'AWS', 'ESP32'],
+    description:
+      'Full-stack IoT security architecture integrating human identity (MOSIP) with device identity (PKI) for a thesis on secure machine-to-machine communication.',
+    subdescriptions: [
+      'Deployed across multi-region AWS EC2 instances with Django, Go, and PostgreSQL on Supabase',
+      'Developed ESP32/ESP8266 firmware for on-device ECC key generation, certificate signing requests, and mTLS-secured telemetry',
+      'Server-side anomaly detection and Certificate Authority functions',
     ],
+    images: [],
     link: null,
   },
   {
-    title: 'Sugarcare',
-    technologies: [
-      "Python", 
-      "Pandas", 
-      "Google Colab", 
-      "Tensorflow", 
-      "PyTorch", 
-      "Keras",
-      "Plotly"
-    ],
-    description: "Sugarcare was our output for our Artificial Intelligence Capstone project where we were tasked to create ML models to identify Sugarcane Leaf Diseases with Computer Vision using only the provided dataset.",
+    title: 'Identif.ai',
+    role: 'AI Engineer & Full-stack Developer',
+    technologies: ['Python', 'PyTorch', 'LangChain', 'Streamlit', 'ChromaDB', 'SQLite'],
+    description:
+      'Real-time face recognition system with anti-spoofing for access control, featuring occupancy tracking, event logging dashboard, and an AI chat agent for querying history.',
     subdescriptions: [
-      "Implemented the *Deep-learning based Computer Vision model via transfer learning with Tiny Swin Transformer* with an average *test accuracy and f1-score* of around *95%* to classify the disease or health of sugarcane leaves",
-      "Explored other architectures such as using ViT, and an ensemble architecture which combined ViT and EfficientNet",
-      "Collaborated in a team of 3 over 1 month",
+      'Developed the CV pipeline (PyTorch, ChromaDB) for face recognition with anti-spoofing',
+      'Built an LLM chat agent (LangChain) for querying access history',
+      'Built the frontend (Streamlit) and tracking database (SQLite)',
     ],
-    images: [
-
+    images: [],
+    link: null,
+    github: 'https://github.com/Waterlemon14/identif.ai/',
+  },
+  {
+    title: 'MedLink',
+    role: 'Backend Engineer',
+    technologies: ['Git', 'Svelte', 'TypeScript', 'PostgreSQL', 'PrismaORM', 'Supabase', 'Vercel'],
+    description:
+      'Healthcare platform that lets patients search for medical services and see real-time facility availability.',
+    subdescriptions: [
+      'Ranked top 10 among 30 start-up pitches at BIG3.STARTUP.SHOWDOWN, Maya HQ',
+      'Implemented client-server communication using Svelte/SvelteKit, TypeScript, and PostgreSQL',
+      'Team of 5 over 1 year using Agile Software Development',
     ],
+    images: [],
+    link: 'https://cs-192-med-link.vercel.app/',
+  },
+  {
+    title: 'Sugarcare',
+    role: 'AI Model Architect',
+    technologies: ['Python', 'Pandas', 'Google Colab', 'Tensorflow', 'PyTorch', 'Keras', 'Plotly'],
+    description:
+      'Deep learning-based CV system to classify sugarcane leaf disease/health using transfer learning.',
+    subdescriptions: [
+      'Implemented Tiny Swin Transformer via transfer learning achieving ~95% test accuracy and F1-score',
+      'Explored ViT and ViT-EfficientNet ensemble architectures',
+      'Collaborated in a team of 3 over 1 month',
+    ],
+    images: [],
+    link: null,
+  },
+  {
+    title: 'Shogimon',
+    role: 'Backend Engineer & Tester',
+    technologies: ['Git', 'Go', 'PureScript', 'Python'],
+    description:
+      'Multiplayer strategy board game using Shogi-like mechanics on an 8x8 board with chess-like movements and pokemon sprites.',
+    subdescriptions: [
+      'Implemented the PureScript client and behavioral testing for both PureScript and Python clients',
+      'Extended with server-side state management in Go',
+      'Collaborated in a team of 4 over 1.5 months',
+    ],
+    images: [],
     link: null,
   },
   {
     title: 'DynaMic',
+    role: 'Hardware & Embedded Engineer',
     technologies: [
-      "Git", 
-      "C", 
-      "Python", 
-      "FastAPI", 
-      "DigitalOcean",
-      "LoRa Communication",
+      'C',
+      'Python',
+      'FastAPI',
+      'DigitalOcean',
+      'LoRa Communication',
       "Sony's Spresense Microcontroller",
       "Sony's Neural Network Console",
     ],
-    description: "DynaMic is a dynamite explosion detection system designed to address blast fishing by providing automated real-time detection and alerts using long range communication and machine learning.",
+    description:
+      'Dynamite fishing monitoring system with ML-based classification, LoRa communication, live feed, and real-time coast guard notification.',
     subdescriptions: [
-      "Collaborated in a team of 6 over 1.5 months and deployed using DigitalOcean",
+      'Implemented the hardware architecture and LoRa communication',
+      'Deployed on Digital Ocean',
+      'Collaborated in a team of 6 over 1.5 months',
     ],
-    images: [
-
-    ],
+    images: [],
     link: null,
   },
   {
-    title: "IO-ko na: Input-Output tables to determine the feasibility of Mindanao's independence",
-    technologies: [
-      "Python", 
-      "Google Colab", 
-      "Pandas", 
-      "Scikit Learn", 
-      "Seaborn", 
-    ],
-    description: "Project to answer the interest in the economic structure of a separate Mindanao in terms of its production and use of resources in the form of Input-Output Tables.",
+    title: "Feasibility Analysis on Mindanao's Independence",
+    role: 'Data Analyst & Model Architect',
+    technologies: ['Python', 'Google Colab', 'Pandas', 'Scikit Learn', 'Seaborn'],
+    description:
+      'Economic feasibility analysis on Mindanao\'s independence through data exploration, analysis, and visualization of production, export, and import across the Philippines.',
     subdescriptions: [
-      "Data exploration, analysis, and visualization on economic production export, and import for the major island groups in the Philippines to gauge the potential of Mindanao as an independent state using  Python, SciPy, Numpy, and Seaborn, and deployed using Vercel",
-      "Created a predictive model using Scikit Learn to predict the future Input-Output Tables given the industry inputs",
-      "Collaborated in a team of 3 over 2 months and deployed the findings on GitHub Pages",
+      'Created predictive models for Input-Output Tables using Python, SciPy, NumPy, Seaborn, and Scikit-Learn',
+      'Deployed findings on GitHub Pages',
+      'Collaborated in a team of 3 over 2 months',
     ],
-    images: [
-
-    ],
-    link: "https://skiym.github.io/ph-industry-interdependence/",
+    images: [],
+    link: 'https://skiym.github.io/ph-industry-interdependence/',
   },
   {
     title: 'Portfolio Website',
-    technologies: [
-      "Git", 
-      "Svelte", 
-      "TypeScript"
-    ],
-    description: "This website",
-    subdescriptions: [
-      "string"
-    ],
-    images: [
-
-    ],
-    link: "https://aeisenhowerii.vercel.app/",
+    role: 'Full-stack Developer',
+    technologies: ['Git', 'Svelte', 'TypeScript', 'TailwindCSS'],
+    description: 'This website — built with SvelteKit, TypeScript, and TailwindCSS.',
+    subdescriptions: [],
+    images: [],
+    link: 'https://aeisenhowerii.vercel.app/',
+    github: 'https://github.com/Waterlemon14/portfolio',
   },
 ]
 
-
-const papers: Project[] = [
+export const papers: Project[] = [
   {
-    title: 'Optimizing Bulletproof Natural Fiber-Reinforced Polymer Composite Materials Using a Hybrid Computational Simulation and Machine Learning Approach',
-    technologies: [
-      "Python", 
-      "Google Colab", 
-      "Pandas", 
-      "Scikit Learn", 
-      "Plotly",
-      "Seaborn", 
-    ],
-    description: "This study investigates the optimization of natural fiber-reinforced polymer composite (NFRPCs) creation for bulletproof applications by integrating computational simulation and machine learning (ML). We incorporate abaca (Musa textilis) or pineapple leaf fibers (Piñatex), along with aramid and carbon fibers, into layered composite plates. Ballistic performance was modeled and predicted using simulated data from ANSYS Explicit Dynamics and validated through live bullet testing. ML models, such as Support Vector Machine (SVM) and Random Forest (RF) with optimized hyperparameters, achieved up to 80% prediction accuracy and an F1-score of 82% for abaca-reinforced composites, closely aligning with experimental results. However, lower prediction accuracy was observed for Piñatex-based composites, due to fiber variability and other factors identified in the study. This hybrid methodology highlights the potential of combining simulation and ML to reduce reliance on extensive live bullet testing, providing a data-driven pathway for the efficient development of high-performance bulletproof composite materials.",
+    title:
+      'Optimizing Bulletproof Natural Fiber-Reinforced Polymer Composite Materials Using a Hybrid Computational Simulation and Machine Learning Approach',
+    technologies: ['Python', 'Google Colab', 'Pandas', 'Scikit Learn', 'Plotly', 'Seaborn'],
+    description:
+      'This study investigates the optimization of natural fiber-reinforced polymer composite (NFRPCs) creation for bulletproof applications by integrating computational simulation and machine learning (ML). We incorporate abaca (Musa textilis) or pineapple leaf fibers (Pi\u00f1atex), along with aramid and carbon fibers, into layered composite plates. Ballistic performance was modeled and predicted using simulated data from ANSYS Explicit Dynamics and validated through live bullet testing. ML models, such as Support Vector Machine (SVM) and Random Forest (RF) with optimized hyperparameters, achieved up to 80% prediction accuracy and an F1-score of 82% for abaca-reinforced composites.',
     subdescriptions: [
-      "Presenting at the 11th International Exchange and Innovation Conference on Engineering & Sciences (IEICES 2025) on October 30-31, 2025, at Kyushu University, Fukuoka Japan"
+      'Presented at the 11th International Exchange and Innovation Conference on Engineering & Sciences (IEICES 2025) at Kyushu University, Fukuoka, Japan',
     ],
-      
-    images: [
-      // microscope.svg
-    ],
-    link: ""
+    images: [],
+    link: '',
   },
 ]
 
-export {
-  projects,
-  papers
-}
+export const awards: Award[] = [
+  {
+    title: 'Top 10 among 30 start-up pitches',
+    detail: 'BIG3.STARTUP.SHOWDOWN',
+    year: '2025',
+  },
+  {
+    title: 'Philippine Scholarships Sponsors Association Scholarship Awardee',
+    detail: '',
+    year: '2022 - Present',
+  },
+  {
+    title: 'University Scholar',
+    detail: 'University of the Philippines Diliman',
+    year: '2022 - Present',
+  },
+  {
+    title: 'TOEFL iBT - 102/120',
+    detail: 'English Proficiency Test',
+    year: '2021',
+  },
+]

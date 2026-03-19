@@ -1,84 +1,74 @@
 <script>
     import Icon from '@iconify/svelte';
-
     import {
-        Profile
-    } from '$lib'
-
-    import {
+        Profile,
         GitHubURL,
         LinkedInURL,
-        PortfolioGitHubURL
-    } from '$lib'
-
+        PortfolioGitHubURL,
+    } from '$lib';
 </script>
 
-<footer class=" p-4 text-gray-400 sm:p-6">
-    <div class="mx-auto max-w-screen-xl">
-        <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
-                <a href="/" class="flex items-center">
-                    <img src={Profile} alt="Dancing Duck" width="500" height="500" loading="lazy" class="mr-3 size-8" />
-                    <span class="self-center whitespace-nowrap text-2xl font-semibold text-white">Eisenhower Aldemita II</span>
+<footer class="mt-auto border-t border-border p-6">
+    <div class="mx-auto max-w-5xl">
+        <div class="flex flex-col gap-8 md:flex-row md:justify-between">
+            <div>
+                <a href="/" class="flex items-center gap-2">
+                    <img src={Profile} alt="Dancing Duck" width="500" height="500" loading="lazy" class="size-7" />
+                    <span class="text-lg font-semibold text-foreground">Eisenhower Aldemita II</span>
                 </a>
+                <p class="mt-2 max-w-xs text-sm text-muted-foreground">
+                    Making today count through secure, efficient, and effective software.
+                </p>
             </div>
-            <div class="grid grid-cols-3 gap-8 sm:gap-6">
+            <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-4 text-sm font-semibold uppercase text-white">Sitemap</h2>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/" class="hover:underline">Home</a></li>
-                        <li><a href="/projects/" class="hover:underline">Projects</a></li>
-                        <li><a href="/research/" class="hover:underline">Research</a></li>
+                    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">Navigate</h2>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
+                        <li><a href="/" class="hover:text-foreground hover:underline">Home</a></li>
+                        <li><a href="/projects" class="hover:text-foreground hover:underline">Projects</a></li>
+                        <li><a href="/research" class="hover:text-foreground hover:underline">Research</a></li>
+                        <li><a href="/me" class="hover:text-foreground hover:underline">Me</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-4 text-sm font-semibold uppercase text-white">Social</h2>
-                    <ul class="space-y-2 text-gray-400">
+                    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">Social</h2>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
                         <li>
-                            <a href={LinkedInURL} target="_blank" class="hover:underline"
-                                >LinkedIn</a
-                            >
+                            <a href={LinkedInURL} target="_blank" class="hover:text-foreground hover:underline">LinkedIn</a>
                         </li>
                         <li>
-                            <a href={GitHubURL} target="_blank" class="hover:underline"
-                                >GitHub</a
-                            >
+                            <a href={GitHubURL} target="_blank" class="hover:text-foreground hover:underline">GitHub</a>
+                        </li>
+                        <li>
+                            <a href="mailto:aeisenhowerii@gmail.com" class="hover:text-foreground hover:underline">Email</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-4 text-sm font-semibold uppercase text-white">Code</h2>
-                    <ul class="space-y-2 text-gray-400">
+                    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">Source</h2>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
                         <li>
-                            <!-- to update link to portfolio repo -->
-                            <a href={PortfolioGitHubURL} target="_blank" class="hover:underline"
-                                >Portfolio Repo</a
-                            >
+                            <a href={PortfolioGitHubURL} target="_blank" class="hover:text-foreground hover:underline">Portfolio Repo</a>
                         </li>
-                        <!-- <li>
-                            <a href={githubURL} target="_blank" class="hover:underline"
-                                >External Assets</a
-                            >
-                        </li> -->
                     </ul>
                 </div>
             </div>
         </div>
-        <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-400 sm:text-center"
-                >&copy; 2025 <a href="/portfolio" class="hover:underline">Eisenhower Aldemita II</a>. All rights reserved.
+        <hr class="my-6 border-border" />
+        <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <span class="text-sm text-muted-foreground">
+                &copy; {new Date().getFullYear()} Eisenhower Aldemita II
             </span>
-            <div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-                <a href="mailto:edaldemita@up.edu.ph" title="edaldemita@up.edu.ph" target="_blank"
-                    ><Icon icon="skill-icons:gmail-dark" width="20" height="20" /></a
-                >
-                <a href={LinkedInURL} title="LinkedIn" target="_blank"
-                    ><Icon icon="skill-icons:linkedin" width="20" height="20" /></a
-                >
-                <a href={GitHubURL} title="GitHub" target="_blank"
-                    ><Icon icon="skill-icons:github-dark" width="20" height="20" /></a
-                >
+            <div class="flex gap-4">
+                <a href="mailto:aeisenhowerii@gmail.com" title="Email" target="_blank" class="text-muted-foreground hover:text-foreground">
+                    <Icon icon="skill-icons:gmail-dark" width="20" height="20" />
+                </a>
+                <a href={LinkedInURL} title="LinkedIn" target="_blank" class="text-muted-foreground hover:text-foreground">
+                    <Icon icon="skill-icons:linkedin" width="20" height="20" />
+                </a>
+                <a href={GitHubURL} title="GitHub" target="_blank" class="text-muted-foreground hover:text-foreground">
+                    <Icon icon="skill-icons:github-dark" width="20" height="20" />
+                </a>
             </div>
         </div>
     </div>

@@ -4,10 +4,12 @@ import Profile from '$lib/logos/dancingDuck.gif';
 const GitHubURL = 'https://github.com/Waterlemon14';
 const LinkedInURL = 'https://www.linkedin.com/in/aeisenhowerii/';
 const PortfolioGitHubURL = 'https://github.com/Waterlemon14/portfolio';
+const Email = 'aeisenhowerii@gmail.com';
 
 export {
   Profile,
   GitHubURL,
   LinkedInURL,
   PortfolioGitHubURL,
+  Email,
 }
