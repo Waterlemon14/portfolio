@@ -48,7 +48,6 @@
         </div>
         <span class="text-sm text-muted-foreground">Sep 2021 - Jul 2026</span>
       </div>
-      <p class="mt-2 text-sm text-muted-foreground">GPA: 1.18 / 1.0 &mdash; Summa Cum Laude Standing</p>
     </div>
   </div>
 
