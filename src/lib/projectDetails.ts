@@ -34,8 +34,7 @@ export const experiences: Experience[] = [
     highlights: [
       'Built Identif.ai — a real-time face recognition system with anti-spoofing for access control, featuring occupancy tracking, event logging, dashboard, and an AI chat agent for querying history',
       'Developed the CV pipeline (PyTorch, ChromaDB), LLM chat agent (LangChain), frontend (Streamlit), and tracking database (SQLite)',
-      'Built Chatty — a chatbot that matches user queries to FAQs and returns corresponding answers or escalates to a live agent',
-      'Dataset refinement, improvement benchmarking (LangChain), and testing using agile software development',
+      'Dataset refinement, model improvement, and testing of AI products (LangChain, FastAPI, AWS) in collaboration with cross-functional teams'
     ],
     technologies: ['Python', 'FastAPI', 'LangChain', 'Streamlit', 'PyTorch', 'AWS'],
   },
