@@ -20,14 +20,14 @@ export const TechMappings: Record<string, string> = {
   "FastAPI"																: "skill-icons:fastapi",
   "Django"                                : "skill-icons:django",
   "LangChain"                             : "simple-icons:langchain",
-  "Streamlit"                             : "skill-icons:streamlit-dark",
+  "Streamlit"                             : "logos:streamlit",
 
   "TailwindCSS"                           : "skill-icons:tailwindcss-dark",
 
   "JavaScript"														: "skill-icons:javascript",
   "TypeScript"														: "skill-icons:typescript",
   "Go"																		: "skill-icons:golang",
-  "PureScript"														: "skill-icons:purescript",
+  "PureScript"														: "material-icon-theme:purescript",
   "Python"																: "skill-icons:python-dark",
   "C"																			: "skill-icons:c",
   "Visual Basic Script"										: "devicon:visualbasic",
@@ -41,6 +41,7 @@ export const TechMappings: Record<string, string> = {
   "Supabase"															: "skill-icons:supabase-dark",
   "DigitalOcean"													: "devicon:digitalocean",
   "Vercel"																: "skill-icons:vercel-dark",
+  "Fly.io"                                : "vscode-icons:file-type-flyio",
   "AWS"                                   : "skill-icons:aws-dark",
   "ESP32"                                 : "simple-icons:espressif",
 

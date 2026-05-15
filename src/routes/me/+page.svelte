@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Profile, GitHubURL, LinkedInURL } from '$lib';
-  import { experiences, awards } from '@/projectDetails';
+  import { experiences, awards, skills } from '@/projectDetails';
   import TechHover from '@/components/ui/TechHover.svelte';
   import Icon from '@iconify/svelte';
 </script>
@@ -43,7 +43,7 @@
     <div class="rounded-lg border border-border bg-card p-5">
       <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h3 class="font-medium text-foreground">B.S. Computer Science</h3>
+          <h3 class="font-medium text-foreground">B.S. Computer Science - Summa Cum Laude</h3>
           <p class="text-sm text-muted-foreground">University of the Philippines Diliman</p>
         </div>
         <span class="text-sm text-muted-foreground">Sep 2021 - Jul 2026</span>
@@ -84,41 +84,16 @@
   <div class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Skills</h2>
     <div class="grid gap-4 md:grid-cols-3">
-      <div class="rounded-lg border border-border bg-card p-5">
-        <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Languages</h3>
-        <div class="flex flex-wrap gap-2">
-          <TechHover text="Python" />
-          <TechHover text="Go" />
-          <TechHover text="C" />
-          <TechHover text="JavaScript" />
-          <TechHover text="TypeScript" />
-          <TechHover text="Visual Basic Script" />
+      {#each skills as group}
+        <div class="rounded-lg border border-border bg-card p-5">
+          <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">{group.category}</h3>
+          <div class="flex flex-wrap gap-2">
+            {#each group.items as item}
+              <TechHover text={item} />
+            {/each}
+          </div>
         </div>
-      </div>
-      <div class="rounded-lg border border-border bg-card p-5">
-        <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Frameworks & Libraries</h3>
-        <div class="flex flex-wrap gap-2">
-          <TechHover text="FastAPI" />
-          <TechHover text="LangChain" />
-          <TechHover text="PyTorch" />
-          <TechHover text="Streamlit" />
-          <TechHover text="Seaborn" />
-          <TechHover text="Pandas" />
-          <TechHover text="Scikit Learn" />
-          <TechHover text="Plotly" />
-          <TechHover text="Svelte" />
-          <TechHover text="TailwindCSS" />
-        </div>
-      </div>
-      <div class="rounded-lg border border-border bg-card p-5">
-        <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Technologies</h3>
-        <div class="flex flex-wrap gap-2">
-          <TechHover text="Git" />
-          <TechHover text="AWS" />
-          <TechHover text="PostgreSQL" />
-          <TechHover text="MySQL" />
-        </div>
-      </div>
+      {/each}
     </div>
   </div>
 
